@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* fuentes */
+    --font1-title: "Kaushan Script", cursive;
+    --font2-body: "M PLUS Rounded 1c", sans-serif;
+    --font3-alert: "Sawarabi Gothic", sans-serif;
+
+    /* color para fuentes */
+    --color-font1: #2f2b2b;
+    --color-font2: #e9e6f0;
+    --color-font3: #551a1a;
+
+    /* Paleta de colores */
+    --color1: #f7edf07d;
+    --color2: #dcccc8;
+    --color3: #fff5f7;
+    --color4: #efdee354;
+    --color5: #a5bbd3;
+}
+
+
+/* Versión Móvil */
+/* Grilla */
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "menu menu menu"
+        "main main main"
+        "pagination pagination pagination"
+        "footer footer footer";
+    grid-template-rows: 7rem 8rem 60% 5rem;
+}
+
+/* Componented: */
+/* Navbar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+    background-color: var(--color3);
+    background-image: url("../imgs/fondoHeader.png");
+    background-size: auto 85px;
+    background-repeat: repeat-x;
+    border-bottom: 2px solid var(--color5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.desktop-menu {
+    display: none;
+}
+
+
+.nav {
+    display: flex;
+    margin-top: 3.5rem;
+    align-items: center;
+}
+
+h1 {
+    font-family: var(--font1-title);
+    color: var(--color-font3);
+    font-size: 1.4rem;
+}
+
+.menu-hamburguesa {
+    margin-top: 3.5rem;
+    color: var(--color-font3);
+    font-size: 2rem;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.menu-hamburguesa:hover {
+    color: var(--color5)
+}
+
+/* Aside bar */
+
+.filter {
+    margin: 5px auto;
+}
+
+select {
+    width: 80vw;
+    font-family: var(--font2-body);
+    font-size: 1.2rem;
+    border-radius: 10px;
+    height: 2.4rem;
+    border: 3px solid var(--color2);
+    color: var(--color-font1);
+}
+
+select:focus {
+    border: 3px solid var(--color2);
+}
+
+select:active {
+    border: 3px solid var(--color2);
+}
+
+select:hover {
+    border: 3px solid var(--color3);
+}
+
+
+.menu {
+    grid-area: menu;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid var(--color5);
+}
+
+.menu h3 {
+    margin: 1rem;
+    text-align: center;
+    font-family: var(--font1-title);
+    color: var(--color-font3);
+}
+
+.menu button {
+    font-family: var(--font3-alert);
+    cursor: pointer;
+    color: var(--color-font1);
+}
+
+.menu button:hover {
+    color: var(--color5);
+}
+
+.menu li {
+    cursor: pointer;
+    font-family: var(--font2-body);
+}
+
+.menu li:hover {
+    color: var(--color5);
+}
+
+/* Card */
+main {
+    grid-area: main;
+    background-color: var(--color1);
+}
+
+
+.container-products {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 80%;
+    justify-content: center;
+    gap: 5px;
+}
+
+.grid-item {
+    background-color: white;
+    height: 300px;
+    border: 1px solid var(--color5);
+    border-bottom: 5px solid #cccccc;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.grid-item:not(:first-child) {
+    display: none;
+}
+
+.img-products {
+    height: 55%;
+    border-bottom: 1px solid var(--color2);
+}
+
+.img-products img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.img-products img:hover {
+    filter: contrast(2);
+}
+
+.information-products {
+    margin: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font2-body);
+    color: var(--color-font1);
+    border-bottom: 1px solid var(--color2);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 1.8rem;
+}
+
+.fa-heart {
+    color: var(--color-font1);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.fa-heart:hover {
+    color: red;
+}
+
+/* paginación */
+
+.pagination {
+    grid-area: pagination;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-div {
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination-div:hover {
+    background-color: var(--color5);
+}
+
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background-color: var(--color2);
+    border-top: 2px solid var(--color5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: var(--font3-alert);
+}
+
+footer p,
+.icons {
+    text-align: center;
+    color: var(--color-font1);
+}
+
+.icons-footer {
+    margin: 5px;
+    font-size: 2rem;
+}
+
+.icons-footer:hover {
+    color: var(--color5);
+}
+
+/*  buttons */
+
+.btn-buy {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-buy p {
+    text-align: center;
+    font-family: var(--font3-alert);
+    color: var(--color-font3);
+}
+
+.grid-item button {
+    background-color: var(--color5);
+    border: none;
+    color: var(--color-font3);
+}
+
+/* Versión escritorio */
+/* Grilla */
+@media (min-width: 576px) {
+    body {
+        display: grid;
+        grid-template-areas:
+            "header menu"
+            "header main"
+            "footer main"
+            "footer pagination";
+        grid-template-columns: 18% 4fr;
+        grid-template-rows: 1fr 4fr;
+    }
+
+    .container-products {
+        height: 95%;
+        margin: 15px 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    select {
+        width: 65vw;
+    }
+
+    .grid-item:not(:first-child) {
+        display: flex;
+    }
+
+    .desktop-menu {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+header {
+    display: block;
+}
+
+
+h1 {
+
+    font-size: 0.8rem;
+}
+
+
+    .desktop-menu ul {
+        list-style-type: none;
+    }
+
+    .desktop-menu ul li {
+        margin-bottom: 10px;
+    }
+
+    .desktop-menu ul li a {
+        text-decoration: none;
+        color: var(--color-font3);
+        font-family: var(--font2-body);
+        font-size: 1.2rem;
+    }
+
+    .desktop-menu ul li a:hover {
+        color: var(--color5);
+    }
+
+}
