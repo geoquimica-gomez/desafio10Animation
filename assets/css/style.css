@@ -28,21 +28,20 @@
 body {
     display: grid;
     grid-template-areas:
-        "header header header"
         "menu menu menu"
+        "header header header"
+        "abaout abaout abaout"
+        "howBuy howBuy howbuy"
         "main main main"
         "pagination pagination pagination"
         "footer footer footer";
-    grid-template-rows: 7rem 8rem 60% 5rem;
+    grid-template-rows: 4rem 7rem auto auto 5rem;
 }
 
 /* Componented: */
 /* Navbar */
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     grid-area: header;
     background-color: var(--color3);
     background-image: url("../imgs/fondoHeader.png");
@@ -52,96 +51,47 @@ header {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.desktop-menu {
-    display: none;
-}
-
-
-.nav {
-    display: flex;
-    margin-top: 3.5rem;
-    align-items: center;
-}
-
 h1 {
+    text-align: center;
+    margin-top: 4rem;
     font-family: var(--font1-title);
     color: var(--color-font3);
     font-size: 1.4rem;
 }
 
-.menu-hamburguesa {
-    margin-top: 3.5rem;
-    color: var(--color-font3);
-    font-size: 2rem;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.menu-hamburguesa:hover {
-    color: var(--color5)
-}
 
 /* Aside bar */
-
-.filter {
-    margin: 5px auto;
-}
-
-select {
-    width: 80vw;
-    font-family: var(--font2-body);
-    font-size: 1.2rem;
-    border-radius: 10px;
-    height: 2.4rem;
-    border: 3px solid var(--color2);
-    color: var(--color-font1);
-}
-
-select:focus {
-    border: 3px solid var(--color2);
-}
-
-select:active {
-    border: 3px solid var(--color2);
-}
-
-select:hover {
-    border: 3px solid var(--color3);
-}
-
 
 .menu {
     grid-area: menu;
     background-color: white;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     border-bottom: 2px solid var(--color5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.menu h3 {
-    margin: 1rem;
-    text-align: center;
-    font-family: var(--font1-title);
+.menu-nav  {
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin-right: 15px;
+}
+
+.menu-nav a {
     color: var(--color-font3);
-}
-
-.menu button {
+    text-decoration: none;
     font-family: var(--font3-alert);
-    cursor: pointer;
-    color: var(--color-font1);
+    font-size: 0.8rem;
+    font-weight: bolder;
 }
 
-.menu button:hover {
-    color: var(--color5);
-}
-
-.menu li {
-    cursor: pointer;
-    font-family: var(--font2-body);
-}
-
-.menu li:hover {
-    color: var(--color5);
+.menu-nav a:hover {
+    color: var(--color5)
 }
 
 /* Card */
@@ -152,9 +102,9 @@ main {
 
 
 .container-products {
-    margin-top: 4rem;
+    margin: 1rem;
     display: grid;
-    grid-template-columns: 80%;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     gap: 5px;
 }
@@ -168,9 +118,6 @@ main {
     flex-direction: column;
 }
 
-.grid-item:not(:first-child) {
-    display: none;
-}
 
 .img-products {
     height: 55%;
@@ -208,6 +155,12 @@ main {
 
 .fa-heart:hover {
     color: red;
+}
+
+.about-us{
+    grid-area: abaout;
+    margin: 5px;
+    border-bottom: 2px solid var(--color5);
 }
 
 /* paginación */
@@ -298,25 +251,6 @@ footer p,
         gap: 5px;
     }
 
-    select {
-        width: 65vw;
-    }
-
-    .grid-item:not(:first-child) {
-        display: flex;
-    }
-
-    .desktop-menu {
-        display: block;
-    }
-
-    .mobile-menu {
-        display: none;
-    }
-
-header {
-    display: block;
-}
 
 
 h1 {
@@ -324,24 +258,5 @@ h1 {
     font-size: 0.8rem;
 }
 
-
-    .desktop-menu ul {
-        list-style-type: none;
-    }
-
-    .desktop-menu ul li {
-        margin-bottom: 10px;
-    }
-
-    .desktop-menu ul li a {
-        text-decoration: none;
-        color: var(--color-font3);
-        font-family: var(--font2-body);
-        font-size: 1.2rem;
-    }
-
-    .desktop-menu ul li a:hover {
-        color: var(--color5);
-    }
 
 }
