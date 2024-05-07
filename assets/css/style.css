@@ -35,7 +35,7 @@ body {
         "main main main"
         "pagination pagination pagination"
         "footer footer footer";
-    grid-template-rows: 4rem 7rem auto auto 5rem;
+    grid-template-rows: 4rem 7rem 1fr auto auto 5rem;
 }
 
 /* Componented: */
@@ -69,12 +69,13 @@ h1 {
     align-items: center;
     justify-content: space-between;
     border-bottom: 2px solid var(--color5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.menu-nav  {
+.menu-nav {
     margin-top: 10px;
     list-style: none;
     display: flex;
@@ -100,6 +101,73 @@ main {
     background-color: var(--color1);
 }
 
+.howBuy {
+    width: 92vw;
+    grid-area: howBuy;
+    margin: 10px;
+    font-family: var(--font2-body);
+    color: var(--color-font1);
+    border-bottom: 2px solid var(--color5);
+}
+
+/* card de como comrpar */
+
+.card-hb1,
+.card-hb2,
+.card-hb3 {
+    display: flex;
+    font-family: var(--font2-body);
+    color: var(--color-font1);
+    align-items: center;
+    gap: 5px;
+    box-shadow: 2px 2px 4px rgba(0.1, 0.2, 0.1, 0.3);
+}
+
+.card-hb1 {
+    background-color: var(--color2);
+}
+
+.card-hb2 {
+    background-color: var(--color3);
+}
+
+.card-hb3 {
+    background-color: var(--color-font3);
+    color: var(--color-font2)
+}
+
+.imgSearch,
+.imgOrder,
+.imgDelivery {
+    width: 15rem;
+    height: 7rem;
+    background-size: cover;
+    font-family: var(--color5);
+    font-weight: bolder;
+    font-size: 4rem;
+    text-shadow: 4px 4px 6px var(--color5);
+    margin: 5px;
+    border: 1px solid var(--color5);
+    border-radius: 15px;
+}
+
+.imgSearch {
+    background-image: url(../imgs/img1.png);
+}
+
+.imgOrder {
+    background-image: url(../imgs/img2.png);
+}
+
+.imgDelivery {
+    background-image: url(../imgs/img3.png);
+}
+
+h4 {
+    text-align: center;
+    font-family: var(--font3-alert);
+    text-decoration: underline;
+}
 
 .container-products {
     margin: 1rem;
@@ -157,10 +225,18 @@ main {
     color: red;
 }
 
-.about-us{
+.about-us {
     grid-area: abaout;
     margin: 5px;
     border-bottom: 2px solid var(--color5);
+    font-family: var(--font2-body);
+    color: var(--color-font1);
+}
+
+h2 {
+    margin: 10px;
+    font-family: var(--font1-title);
+    color: var(--color-font3);
 }
 
 /* paginación */
@@ -229,18 +305,20 @@ footer p,
     color: var(--color-font3);
 }
 
-/* Versión escritorio */
-/* Grilla */
-@media (min-width: 576px) {
+/* versión tablet */
+
+@media (min-width: 576px) and (max-width: 991px) {
     body {
-        display: grid;
         grid-template-areas:
-            "header menu"
-            "header main"
-            "footer main"
-            "footer pagination";
-        grid-template-columns: 18% 4fr;
-        grid-template-rows: 1fr 4fr;
+            "menu menu"
+            "header header"
+            "abaout howBuy"
+            "main main"
+            "main main"
+            "pagination pagination"
+            "footer footer";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 4rem 2fr;
     }
 
     .container-products {
@@ -252,11 +330,78 @@ footer p,
     }
 
 
+    .howBuy {
+        width: 94%;
+        border: none;
+    }
 
-h1 {
-
-    font-size: 0.8rem;
 }
 
+
+/* Versión escritorio */
+/* Grilla */
+@media (min-width: 992px) {
+    body {
+        grid-template-areas:
+            "header header"
+            "menu abaout"
+            "menu howBuy"
+            "menu main"
+            "menu main"
+            "footer main"
+            "footer pagination";
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 7rem 2fr;
+    }
+
+    .container-products {
+        height: 95%;
+        margin: 15px 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    .card-hb1,
+    .card-hb2,
+    .card-hb3 {
+        flex-direction: column;
+    }
+
+    .cards-hb {
+        display: flex;
+        gap: 15px;
+    }
+
+    .howBuy {
+        width: 97%;
+        border: none;
+    }
+
+    h1 {
+
+        font-size: 2rem;
+    }
+
+    .menu {
+        align-items: flex-start;
+        flex-direction: column;
+        position: static;
+        z-index: 1;
+        justify-content: flex-start;
+    }
+
+    .menu img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .menu-nav {
+        flex-direction: column;
+    }
+
+    .pagination {
+        padding-bottom: 10px;
+    }
 
 }
