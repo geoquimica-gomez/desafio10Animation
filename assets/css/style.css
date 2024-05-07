@@ -163,6 +163,58 @@ main {
     background-image: url(../imgs/img3.png);
 }
 
+/* Animación para la card de Como comprar */
+
+/* Definimos los keyframes para la animación de rebote */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.card-hb1:hover .imgSearch,
+.card-hb2:hover .imgOrder,
+.card-hb3:hover .imgDelivery {
+    animation: bounce 1s;
+}
+
+.offer-banner {
+    background-color: var(--color2);
+    padding: 10px 20px;
+    overflow: hidden;
+    font-family: var(--font3-alert);
+    font-size: 1rem;
+    color: var(--color-font3);
+}
+
+.offer-text {
+    animation: moveText 25s ease-out infinite;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
 h4 {
     text-align: center;
     font-family: var(--font3-alert);
@@ -178,12 +230,22 @@ h4 {
 }
 
 .grid-item {
+    position: relative;
+    overflow: hidden;
     background-color: white;
     height: 300px;
     border: 1px solid var(--color5);
     border-bottom: 5px solid #cccccc;
     border-radius: 10px;
     flex-direction: column;
+    transition: opacity 1s ease;
+}
+
+
+.grid-item:hover {
+    background-image: url('https://img1.picmix.com/output/stamp/thumb/1/9/4/9/1329491_83286.gif');
+    opacity: 1;
+    background-size: cover;
 }
 
 
@@ -196,6 +258,8 @@ h4 {
     width: 100%;
     height: 100%;
     cursor: pointer;
+    /* Transición */
+    transition: filter 0.3s ease-in-out;
 }
 
 .img-products img:hover {

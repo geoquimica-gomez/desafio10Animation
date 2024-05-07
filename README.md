@@ -1,6 +1,6 @@
-# Desafío 9: Implementación de CSS Grid
+# Desafío 10: Implementación de CSS animaciones
 
-En este desafío de la Academia Latam, se puso en práctica el uso de media queries y breakpoints aplicados al diseño de layouts responsivos.
+En este desafío de la Academia Latam, se puso en práctica el uso de media queries, breakpoints aplicados al diseño de layouts responsivos, flexbox y animciones.
 
 ## Archivos incluidos
 
