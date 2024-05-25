@@ -1,3 +1,6 @@
+
+url deploy: https://geoquimica-gomez.github.io/desafio10Animation.github.io/
+
 # Desafío 10: Implementación de CSS animaciones
 
 En este desafío de la Academia Latam, se puso en práctica el uso de media queries, breakpoints aplicados al diseño de layouts responsivos, flexbox y animciones.
